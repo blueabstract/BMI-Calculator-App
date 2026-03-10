@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BMI Calculator"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Know your Body Mass Index"
+            android:textSize="14sp"
+            android:textColor="#888"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Input Card -->
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Your Details"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Weight -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:textSize="14sp"
+                    android:textColor="#555"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Enter weight in kg"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Height -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Height"
+                    android:textSize="14sp"
+                    android:textColor="#555"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Enter height in cm"
+                    app:endIconMode="clear_text">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Age -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textSize="14sp"
+                    android:textColor="#555"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="6dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Enter your age">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Gender -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textSize="14sp"
+                    android:textColor="#555"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+
+                <RadioGroup
+                    android:id="@+id/rg_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Male"
+                        android:textSize="15sp"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Female"
+                        android:textSize="15sp"/>
+                </RadioGroup>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Calculate Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Calculate BMI"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
