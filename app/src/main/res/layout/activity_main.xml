@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="BMI Calculator"
+            android:text="Fitness Tracker"
             android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="#1A237E"
